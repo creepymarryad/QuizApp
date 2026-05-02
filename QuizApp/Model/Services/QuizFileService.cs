@@ -15,7 +15,7 @@ namespace Model.Services
                 return sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
         }
-        public void Save(QuizData quiz, string filePath, string password)
+        public void Save(string filePath, string password, QuizData quiz)
         {
             string json = JsonSerializer.Serialize(quiz);
             byte[] plainBytes = Encoding.UTF8.GetBytes(json);
