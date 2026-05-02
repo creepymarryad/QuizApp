@@ -3,7 +3,7 @@ namespace Model.Interfaces
 {
     public interface IQuizFileService
     {
-        void SaveQuiz(QuizData quiz, string filePath, string password);
-        QuizData LoadQuiz(string filePath, string password);
+        void Save(QuizData quiz, string filePath, string password);
+        QuizData Load(string filePath, string password);
     }
 }

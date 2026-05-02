@@ -1,11 +1,12 @@
 ﻿using Model.Entities;
+using Model.Interfaces;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 
 namespace Model.Services
 {
-    public class QuizFileService
+    public class QuizFileService : IQuizFileService
     {
         public byte[] GetKey(string password)
         {
