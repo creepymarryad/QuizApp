@@ -1,3 +1,5 @@
+using Creator.Presenters;
+
 namespace QuizApp
 {
     internal static class Program
@@ -11,7 +13,9 @@ namespace QuizApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            var mainView = new CreatorForm();
+            var presenter = new CreatorPresenter(mainView);
+            Application.Run(mainView);
         }
     }
 }
