@@ -1,6 +1,6 @@
 ﻿namespace Solver
 {
-    partial class Form1
+    partial class ShellForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            panel_MainContainer = new Panel();
+            SuspendLayout();
+            // 
+            // panel_MainContainer
+            // 
+            panel_MainContainer.Dock = DockStyle.Fill;
+            panel_MainContainer.Location = new Point(0, 0);
+            panel_MainContainer.Name = "panel_MainContainer";
+            panel_MainContainer.Size = new Size(1414, 960);
+            panel_MainContainer.TabIndex = 0;
+            // 
+            // ShellForm
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "Form1";
+            ClientSize = new Size(1414, 960);
+            Controls.Add(panel_MainContainer);
+            Name = "ShellForm";
+            Text = "QuizSolver";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panel_MainContainer;
     }
 }
