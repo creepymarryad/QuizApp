@@ -24,20 +24,20 @@ namespace Creator.Presenters
             List<bool> isCorrectFlags = _view.IsCorrectFlags;
             if (string.IsNullOrWhiteSpace(questionText))
             {
-                _view.ShowError("Pytanie musi mieć treść!");
+                _view.ShowError("The question cannot be empty!");
                 return;
             }
             foreach (var answer in answersTexts)
             {
                 if (string.IsNullOrWhiteSpace(answer))
                 {
-                    _view.ShowError("Musisz podać wszystkie 4 odpowiedzi!");
+                    _view.ShowError("Please provide all 4 answer options!");
                     return;
                 }
             }
             if (!isCorrectFlags.Contains(true))
             {
-                _view.ShowError("Musisz oznaczyć przynajmniej jedną odpowiedź jaką poprawną!");
+                _view.ShowError("Please set at least one answer as correct!");
                 return;
             }
             Question newQuestion = new Question

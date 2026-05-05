@@ -34,7 +34,7 @@ namespace Creator.Presenters
             int index = _view.SelectedQuestion;
             if (index < 0 || index >= _quiz.Questions.Count)
             {
-                _view.ShowMessage("Wybierz pytanie z listy, które chcesz edytować!");
+                _view.ShowMessage("Choose the question you want to edit!");
                 return;
             }
             var questionToEdit = _quiz.Questions[index];
@@ -51,38 +51,39 @@ namespace Creator.Presenters
         }
         private void OnRemoveQuestionBtnClicked()
         {
-            int id = _view.SelectedQuestion;
-            if (id >= 0 && id < _quiz.Questions.Count) 
+            int index = _view.SelectedQuestion;
+            if (index < 0 || index >= _quiz.Questions.Count)
             { 
-                _quiz.Questions.RemoveAt(id);
-                RefreshQuestionList();
+                _view.ShowMessage("Choose the question you want to remove!");
+                return;
             }
+            _quiz.Questions.RemoveAt(index);
+            RefreshQuestionList();
         }
         private void OnSaveQuizBtnClicked()
         {
             if (string.IsNullOrWhiteSpace(_view.QuizTitle))
             {
-                _view.ShowMessage("Twój quiz musi mieć tytuł przed zapisaniem!");
+                _view.ShowMessage("Please provide a title to your quiz!");
                 return;
             }
             if (_quiz.Questions.Count == 0)
             {
-                _view.ShowMessage("Nie możesz zapisać pustego quizu. Dodaj chociaż jedno pytanie!");
+                _view.ShowMessage("Cannot save the empty quiz!");
                 return;
             }
             if (_view.TimeLimitSeconds <= 0)
             {
-                _view.ShowMessage("Czas na quiz musi być większy niż 0!");
+                _view.ShowMessage("Time duration of a quiz has to be a positive number!");
                 return;
             }
             _quiz.Title = _view.QuizTitle;
             _quiz.TimeLimitSeconds = _view.TimeLimitSeconds;
             using (var saveFileDialog = new SaveFileDialog())
             {
-                saveFileDialog.Filter = "Pliki Quiz (*.quiz)|*.quiz";
-                saveFileDialog.Title = "Zapisz zaszyfrowany quiz";
+                saveFileDialog.Filter = "Quiz Files (*.quiz)|*.quiz";
+                saveFileDialog.Title = "Save Encrypted Quiz";
                 saveFileDialog.FileName = $"{_quiz.Title}.quiz";
-
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string password = "Admin67";
@@ -90,13 +91,11 @@ namespace Creator.Presenters
                     {
                         var fileService = new Model.Services.QuizFileService();
                         fileService.Save(saveFileDialog.FileName, password, _quiz);
-
-                        _view.ShowMessage($"Plik powinien być tutaj: {saveFileDialog.FileName}");
                         _view.ShowMessage("Pomyślnie zapisano plik!");
                     }
                     catch (Exception ex)
                     {
-                        _view.ShowMessage($"Wystąpił błąd podczas zapisu: {ex.Message}");
+                        _view.ShowMessage($"Error while writing the file: {ex.Message}");
                     }
                 }
             }
