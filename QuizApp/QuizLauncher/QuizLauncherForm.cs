@@ -22,9 +22,13 @@ namespace QuizLauncher
         }
         private void RunCreatorBtn_Click(object sender, EventArgs e)
         {
+            Process[] runningCreators = Process.GetProcessesByName("Creator");
             try
             {
-                Process.Start("Creator.exe");
+                if (runningCreators.Length == 0)
+                {
+                    Process.Start(@"Creator.exe");
+                }
             }
             catch (Exception ex)
             {
@@ -33,9 +37,13 @@ namespace QuizLauncher
         }
         private void RunSolverBtn_Click(object sender, EventArgs e)
         {
+            Process[] runningSolvers = Process.GetProcessesByName("Solver");
             try
             {
-                Process.Start("Solver.exe");
+                if (runningSolvers.Length == 0)
+                {
+                    Process.Start(@"Solver.exe");
+                }
             }
             catch (Exception ex)
             {
