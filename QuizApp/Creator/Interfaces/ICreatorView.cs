@@ -8,6 +8,7 @@
         void DisplayQuestions(List<string> questionTexts);
         void ShowMessage(string message);
         event Action? AddQuestionBtnClicked;
+        event Action? ChangeQuestionBtnClicked;
         event Action? RemoveQuestionBtnClicked;
         event Action? SaveQuizBtnClicked;
     }

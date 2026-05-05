@@ -15,6 +15,7 @@ namespace Creator.Presenters
                 Questions = new List<Question>()
             };
             _view.AddQuestionBtnClicked += OnAddQuestionBtnClicked;
+            _view.ChangeQuestionBtnClicked += OnChangeQuestionBtnClicked;
             _view.RemoveQuestionBtnClicked += OnRemoveQuestionBtnClicked;
             _view.SaveQuizBtnClicked += OnSaveQuizBtnClicked;
         }
@@ -27,6 +28,26 @@ namespace Creator.Presenters
                 RefreshQuestionList();
             });
             ((Form)addQuestionView).ShowDialog();
+        }
+        private void OnChangeQuestionBtnClicked()
+        {
+            int index = _view.SelectedQuestion;
+            if (index < 0 || index >= _quiz.Questions.Count)
+            {
+                _view.ShowMessage("Wybierz pytanie z listy, które chcesz edytować!");
+                return;
+            }
+            var questionToEdit = _quiz.Questions[index];
+            IAddQuestionView changeQuestionView = new Views.AddQuestionForm();
+            changeQuestionView.QuestionText = questionToEdit.Text;
+            changeQuestionView.AnswerTexts = questionToEdit.Answers.Select(a => a.Text).ToList();
+            changeQuestionView.IsCorrectFlags = questionToEdit.Answers.Select(a => a.IsCorrect).ToList();
+            var addPresenter = new AddQuestionPresenter(changeQuestionView, (updatedQuestion) =>
+            {
+                _quiz.Questions[index] = updatedQuestion;
+                RefreshQuestionList();
+            });
+            ((Form)changeQuestionView).ShowDialog();
         }
         private void OnRemoveQuestionBtnClicked()
         {
@@ -82,12 +103,13 @@ namespace Creator.Presenters
         }
         private void RefreshQuestionList() 
         {
-            List<string> questionTexts = new List<string>();
-            foreach (var question in _quiz.Questions) 
+            List<string> questions = new List<string>();
+            for (int i = 0; i < _quiz.Questions.Count; i++) 
             {
-                questionTexts.Add(question.Text);
+                string line = $"{i+1}. {_quiz.Questions[i].Text}";
+                questions.Add(line);
             }
-            _view.DisplayQuestions(questionTexts);
+            _view.DisplayQuestions(questions);
         }
     }
 }

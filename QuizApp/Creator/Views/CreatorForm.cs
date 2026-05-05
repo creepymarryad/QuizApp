@@ -8,6 +8,7 @@ namespace QuizApp
         {
             InitializeComponent();
             AddQuestionBtn.Click += (sender, e) => AddQuestionBtnClicked?.Invoke();
+            ChangeQuestionBtn.Click += (sender, e) => ChangeQuestionBtnClicked?.Invoke();
             RemoveQuestionBtn.Click += (sender, e) => RemoveQuestionBtnClicked?.Invoke();
             SaveQuizBtn.Click += (sender, e) => SaveQuizBtnClicked?.Invoke();
         }
@@ -27,6 +28,7 @@ namespace QuizApp
             MessageBox.Show(message, "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public event Action? AddQuestionBtnClicked;
+        public event Action? ChangeQuestionBtnClicked;
         public event Action? RemoveQuestionBtnClicked;
         public event Action? SaveQuizBtnClicked;
     }

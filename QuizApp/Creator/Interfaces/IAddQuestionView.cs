@@ -2,9 +2,9 @@
 {
     public interface IAddQuestionView
     {
-        string QuestionText { get; }
-        List<string> AnswerTexts { get; }
-        List<bool> IsCorrectFlags { get; }
+        string QuestionText { get; set; }
+        List<string> AnswerTexts { get; set; }
+        List<bool> IsCorrectFlags { get; set; }
         void ShowError(string message);
         void CloseView();
         event Action AddBtnClicked;
