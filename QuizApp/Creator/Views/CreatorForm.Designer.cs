@@ -34,6 +34,7 @@
             AddQuestionBtn = new Button();
             RemoveQuestionBtn = new Button();
             SaveQuizBtn = new Button();
+            ChangeQuestionBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)QuizTimeLimitNumericUpDown).BeginInit();
             SuspendLayout();
             // 
@@ -46,9 +47,9 @@
             // 
             // QuizTimeLimitNumericUpDown
             // 
-            QuizTimeLimitNumericUpDown.Location = new Point(589, 39);
+            QuizTimeLimitNumericUpDown.Location = new Point(400, 40);
             QuizTimeLimitNumericUpDown.Name = "QuizTimeLimitNumericUpDown";
-            QuizTimeLimitNumericUpDown.Size = new Size(150, 27);
+            QuizTimeLimitNumericUpDown.Size = new Size(78, 27);
             QuizTimeLimitNumericUpDown.TabIndex = 1;
             // 
             // QuestionsListBox
@@ -56,6 +57,7 @@
             QuestionsListBox.FormattingEnabled = true;
             QuestionsListBox.Location = new Point(65, 120);
             QuestionsListBox.Name = "QuestionsListBox";
+            QuestionsListBox.ScrollAlwaysVisible = true;
             QuestionsListBox.Size = new Size(674, 204);
             QuestionsListBox.TabIndex = 2;
             // 
@@ -65,32 +67,42 @@
             AddQuestionBtn.Name = "AddQuestionBtn";
             AddQuestionBtn.Size = new Size(170, 29);
             AddQuestionBtn.TabIndex = 3;
-            AddQuestionBtn.Text = "Dodaj pytanie";
+            AddQuestionBtn.Text = "Add question";
             AddQuestionBtn.UseVisualStyleBackColor = true;
             // 
             // RemoveQuestionBtn
             // 
-            RemoveQuestionBtn.Location = new Point(329, 382);
+            RemoveQuestionBtn.Location = new Point(590, 382);
             RemoveQuestionBtn.Name = "RemoveQuestionBtn";
             RemoveQuestionBtn.Size = new Size(149, 29);
             RemoveQuestionBtn.TabIndex = 4;
-            RemoveQuestionBtn.Text = "Usuń pytanie";
+            RemoveQuestionBtn.Text = "Delete question";
             RemoveQuestionBtn.UseVisualStyleBackColor = true;
             // 
             // SaveQuizBtn
             // 
-            SaveQuizBtn.Location = new Point(573, 382);
+            SaveQuizBtn.Location = new Point(573, 38);
             SaveQuizBtn.Name = "SaveQuizBtn";
             SaveQuizBtn.Size = new Size(166, 29);
             SaveQuizBtn.TabIndex = 5;
-            SaveQuizBtn.Text = "Zapisz quiz";
+            SaveQuizBtn.Text = "Save quiz";
             SaveQuizBtn.UseVisualStyleBackColor = true;
+            // 
+            // ChangeQuestionBtn
+            // 
+            ChangeQuestionBtn.Location = new Point(340, 382);
+            ChangeQuestionBtn.Name = "ChangeQuestionBtn";
+            ChangeQuestionBtn.Size = new Size(149, 29);
+            ChangeQuestionBtn.TabIndex = 6;
+            ChangeQuestionBtn.Text = "Change question";
+            ChangeQuestionBtn.UseVisualStyleBackColor = true;
             // 
             // CreatorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ChangeQuestionBtn);
             Controls.Add(SaveQuizBtn);
             Controls.Add(RemoveQuestionBtn);
             Controls.Add(AddQuestionBtn);
@@ -98,7 +110,7 @@
             Controls.Add(QuizTimeLimitNumericUpDown);
             Controls.Add(QuizNameTextBox);
             Name = "CreatorForm";
-            Text = "Kreator quizu";
+            Text = "Quiz Creator";
             ((System.ComponentModel.ISupportInitialize)QuizTimeLimitNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -112,5 +124,6 @@
         private Button AddQuestionBtn;
         private Button RemoveQuestionBtn;
         private Button SaveQuizBtn;
+        private Button ChangeQuestionBtn;
     }
 }

@@ -46,6 +46,7 @@
             QuestionTextBox.Location = new Point(195, 23);
             QuestionTextBox.Multiline = true;
             QuestionTextBox.Name = "QuestionTextBox";
+            QuestionTextBox.ScrollBars = ScrollBars.Vertical;
             QuestionTextBox.Size = new Size(421, 161);
             QuestionTextBox.TabIndex = 1;
             // 
@@ -119,7 +120,7 @@
             AddBtn.Name = "AddBtn";
             AddBtn.Size = new Size(170, 29);
             AddBtn.TabIndex = 10;
-            AddBtn.Text = "Dodaj";
+            AddBtn.Text = "Save";
             AddBtn.UseVisualStyleBackColor = true;
             // 
             // CancelBtn
@@ -128,13 +129,15 @@
             CancelBtn.Name = "CancelBtn";
             CancelBtn.Size = new Size(170, 29);
             CancelBtn.TabIndex = 11;
-            CancelBtn.Text = "Anuluj";
+            CancelBtn.Text = "Cancel";
             CancelBtn.UseVisualStyleBackColor = true;
             // 
             // AddQuestionForm
             // 
+            AcceptButton = AddBtn;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = CancelBtn;
             ClientSize = new Size(800, 450);
             Controls.Add(CancelBtn);
             Controls.Add(AddBtn);
@@ -148,7 +151,7 @@
             Controls.Add(QuestionAnswer1TextBox);
             Controls.Add(QuestionTextBox);
             Name = "AddQuestionForm";
-            Text = "Dodaj pytanie";
+            Text = "Add Question";
             ResumeLayout(false);
             PerformLayout();
         }
