@@ -3,4 +3,5 @@
   <Project Path="Model/Model.csproj" Id="20245bde-3a7b-450b-9f9d-81f25ff73e47" />
   <Project Path="QuizLauncher/QuizLauncher.csproj" Id="d11627a8-5db9-45a4-ba3d-3fc0f4171d7b" />
   <Project Path="Solver/Solver.csproj" Id="ae92209e-7d26-48c2-8383-a0ae94a94265" />
+  <Project Path="UI/UI.csproj" Id="969f2688-cd27-4742-8f9e-f16ef26b2277" />
 </Solution>
