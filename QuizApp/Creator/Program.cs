@@ -12,10 +12,22 @@ namespace QuizApp
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            var mainView = new CreatorForm();
-            var presenter = new CreatorPresenter(mainView);
-            Application.Run(mainView);
+            try
+            {
+                ApplicationConfiguration.Initialize();
+                var mainView = new CreatorForm();
+                var presenter = new CreatorPresenter(mainView);
+                Application.Run(mainView);
+            }
+            catch (Exception ex)
+            {
+                // To okienko zatrzyma program i wypluje nam cały błąd na ekran
+                MessageBox.Show($"Błąd krytyczny: {ex.Message}\n\nSzczegóły: {ex.StackTrace}",
+                                "Crash Creatora!",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+
         }
     }
 }

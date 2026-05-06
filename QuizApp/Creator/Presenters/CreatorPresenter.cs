@@ -1,5 +1,6 @@
 ﻿using Creator.Interfaces;
 using Model.Entities;
+using Model.Services;
 
 namespace Creator.Presenters
 {
@@ -18,6 +19,7 @@ namespace Creator.Presenters
             _view.ChangeQuestionBtnClicked += OnChangeQuestionBtnClicked;
             _view.RemoveQuestionBtnClicked += OnRemoveQuestionBtnClicked;
             _view.SaveQuizBtnClicked += OnSaveQuizBtnClicked;
+            _view.LoadQuizBtnClicked += OnLoadQuizBtnClicked;
         }
         private void OnAddQuestionBtnClicked()
         {
@@ -96,6 +98,34 @@ namespace Creator.Presenters
                     catch (Exception ex)
                     {
                         _view.ShowMessage($"Error while writing the file: {ex.Message}");
+                    }
+                }
+            }
+        }
+        private void OnLoadQuizBtnClicked()
+        {
+            using (var openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Quiz Files (*.quiz)|*.quiz";
+                openFileDialog.Title = "Open Encrypted Quiz";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string password = "Admin67";
+                    try
+                    {
+                        var fileService = new QuizFileService();
+                        _quiz = fileService.Load(openFileDialog.FileName, password);
+
+                        _view.QuizTitle = _quiz.Title;
+                        _view.TimeLimitSeconds = _quiz.TimeLimitSeconds;
+                        RefreshQuestionList();
+
+                        _view.ShowMessage("Quiz loaded successfully!");
+                    }
+                    catch (Exception ex)
+                    {
+                        _view.ShowMessage($"Error: {ex.Message}");
                     }
                 }
             }
