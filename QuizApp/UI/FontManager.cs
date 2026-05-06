@@ -20,8 +20,8 @@ namespace UI
             {
                 throw new Exception($"Not found: {fileName}");
             }
-            
-            string tempFilePath = Path.Combine(Path.GetTempPath(), fileName);
+            string newFileName = $"{Guid.NewGuid()}_{fileName}";
+            string tempFilePath = Path.Combine(Path.GetTempPath(), newFileName);
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {

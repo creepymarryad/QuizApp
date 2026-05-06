@@ -10,6 +10,9 @@ namespace Creator.Views
             InitializeComponent();
             AddBtn.Click += (sender, e) => AddBtnClicked?.Invoke();
             CancelBtn.Click += (sender, e) => this.Close();
+
+            this.BackgroundImage = Image.FromFile(@"Images\mc_bg.png");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string QuestionText
