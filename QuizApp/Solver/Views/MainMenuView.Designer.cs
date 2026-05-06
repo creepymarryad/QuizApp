@@ -56,17 +56,17 @@
             // 
             label_FileSelect.AutoSize = true;
             label_FileSelect.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_FileSelect.Location = new Point(402, 203);
+            label_FileSelect.Location = new Point(296, 203);
             label_FileSelect.Name = "label_FileSelect";
-            label_FileSelect.Size = new Size(283, 48);
+            label_FileSelect.Size = new Size(273, 48);
             label_FileSelect.TabIndex = 1;
-            label_FileSelect.Text = "Select quiz file: ";
+            label_FileSelect.Text = "Select quiz file:";
             // 
             // label_Password
             // 
             label_Password.AutoSize = true;
             label_Password.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Password.Location = new Point(397, 280);
+            label_Password.Location = new Point(339, 280);
             label_Password.Name = "label_Password";
             label_Password.Size = new Size(288, 48);
             label_Password.TabIndex = 2;

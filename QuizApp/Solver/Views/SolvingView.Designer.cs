@@ -48,6 +48,7 @@
             label_QuizTitle.Size = new Size(379, 96);
             label_QuizTitle.TabIndex = 1;
             label_QuizTitle.Text = "Quiz Title";
+            label_QuizTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label_Timer
             // 
