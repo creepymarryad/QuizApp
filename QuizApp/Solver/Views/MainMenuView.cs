@@ -7,6 +7,53 @@ namespace Solver.Views
         public MainMenuView()
         {
             InitializeComponent();
+
+            this.BackgroundImage = UI.Properties.Resources.mc_bg;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            panel_QuizInfo.BackColor = Color.Transparent;
+            label_FileSelect.Font = UI.FontManager.GetFont(16f, 0);
+            label_FileSelect.ForeColor = Color.White;
+            label_FileSelect.BackColor = Color.DimGray;
+            label_Password.Font = UI.FontManager.GetFont(16f, 0);
+            label_Password.ForeColor = Color.White;
+            label_Password.BackColor = Color.DimGray;
+            label_QuizMaxScore.Font = UI.FontManager.GetFont(16f, 0);
+            label_QuizMaxScore.ForeColor = Color.White;
+            label_QuizMaxScore.BackColor = Color.DimGray;
+            label_QuizQuestions.Font = UI.FontManager.GetFont(16f, 0);
+            label_QuizQuestions.ForeColor = Color.White;
+            label_QuizQuestions.BackColor = Color.DimGray;
+            label_QuizTime.Font = UI.FontManager.GetFont(16f, 0);
+            label_QuizTime.ForeColor = Color.White;
+            label_QuizTime.BackColor = Color.DimGray;
+            label_QuizTitle.Font = UI.FontManager.GetFont(20f, 0);
+            label_QuizTitle.ForeColor = Color.Yellow;
+            label_QuizTitle.BackColor = Color.DimGray;
+            label_Title.Font = UI.FontManager.GetFont(28f, 0, FontStyle.Bold);
+            label_Title.ForeColor = Color.Yellow;
+            label_Title.BackColor = Color.DimGray;
+
+            textBox_Password.BackColor = Color.DimGray;
+            textBox_Password.ForeColor = Color.White;
+            textBox_Password.BorderStyle = BorderStyle.FixedSingle;
+            textBox_Password.Font = UI.FontManager.GetFont(16f);
+
+            button_Start.BackgroundImage = UI.Properties.Resources.mc_tile;
+            button_Start.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Start.Font = UI.FontManager.GetFont(16f);
+            button_Start.FlatStyle = FlatStyle.Flat;
+            button_Start.FlatAppearance.BorderSize = 0;
+            button_Start.ForeColor = Color.White;
+
+            button_SelectFile.BackgroundImage = UI.Properties.Resources.mc_tile;
+            button_SelectFile.BackgroundImageLayout = ImageLayout.Stretch;
+            button_SelectFile.Font = UI.FontManager.GetFont(14f);
+            button_SelectFile.FlatStyle = FlatStyle.Flat;
+            button_SelectFile.FlatAppearance.BorderSize = 0;
+            button_SelectFile.ForeColor = Color.White;
+
+            
         }
 
         public string FilePath { get; set; }

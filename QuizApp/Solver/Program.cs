@@ -14,6 +14,9 @@ static class Program
     static void Main()
     {
         ApplicationConfiguration.Initialize();
+
+        UI.FontManager.LoadFontFromResource("Monocraft.ttf");
+
         _fileService = new QuizFileService();
         _evaluator = new QuizEvaluatorService();
         _shell = new ShellForm();

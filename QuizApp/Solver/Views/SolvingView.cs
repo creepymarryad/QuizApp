@@ -7,7 +7,55 @@ namespace Solver.Views
     {
         private List<CheckBox> _currentCheckBoxes = new List<CheckBox>();
 
-        public SolvingView() { InitializeComponent(); }
+        public SolvingView() 
+        { 
+            InitializeComponent();
+
+            this.DoubleBuffered = true;
+
+            this.BackgroundImage = UI.Properties.Resources.mc_bg;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            label_Progress.Font = UI.FontManager.GetFont(14f);
+            label_Progress.ForeColor = Color.Yellow;
+            label_Progress.BackColor  = Color.Transparent;
+
+            label_Timer.Font = UI.FontManager.GetFont(14f);
+            label_Timer.ForeColor = Color.Yellow;
+            label_Timer.BackColor = Color.Transparent;
+
+            label_QuestionText.Font = UI.FontManager.GetFont(16f);
+            label_QuestionText.BackColor = Color.Transparent;
+            label_QuestionText.ForeColor = Color.White;
+
+            label_QuizTitle.Font = UI.FontManager.GetFont(25f, 0, FontStyle.Bold);
+            label_QuizTitle.BackColor = Color.DimGray;
+            label_QuizTitle.ForeColor = Color.Yellow;
+
+            answersPanel.BackColor = Color.Transparent;
+
+            button_Next.BackgroundImage = UI.Properties.Resources.mc_tile;
+            button_Next.BackgroundImageLayout = ImageLayout.Stretch;
+            button_Next.Font = UI.FontManager.GetFont(12f);
+            button_Next.ForeColor = Color.White;
+            button_Next.FlatStyle = FlatStyle.Flat;
+            button_Next.FlatAppearance.BorderSize = 0;
+
+            btnPrevious.BackgroundImage = UI.Properties.Resources.mc_tile;
+            btnPrevious.BackgroundImageLayout = ImageLayout.Stretch;
+            btnPrevious.Font = UI.FontManager.GetFont(12f);
+            btnPrevious.ForeColor = Color.White;
+            btnPrevious.FlatStyle = FlatStyle.Flat;
+            btnPrevious.FlatAppearance.BorderSize = 0;
+
+            button2.BackgroundImage = UI.Properties.Resources.mc_tile;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.Font = UI.FontManager.GetFont(14f);
+            button2.ForeColor = Color.Yellow;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.FlatAppearance.BorderSize = 0;
+
+        }
 
         public string QuizTitle { set => label_QuizTitle.Text = value; }
         public string QuestionText { set => label_QuestionText.Text = value; }
@@ -38,6 +86,7 @@ namespace Solver.Views
 
         public void DisplayAnswers(List<string> answers)
         {
+            answersPanel.Visible = false;
             answersPanel.Controls.Clear();
             _currentCheckBoxes.Clear();
 
@@ -54,7 +103,11 @@ namespace Solver.Views
             {
                 CheckBox cb = new CheckBox();
                 cb.Text = answers[i];
-                cb.Font = new Font("Segoe UI", 12);
+                //cb.Font = new Font("Segoe UI", 12);
+
+                cb.Font = UI.FontManager.GetFont(10f);
+                cb.BackColor = Color.Transparent;
+                cb.ForeColor = Color.White;
 
                 cb.AutoSize = false;
                 cb.Dock = DockStyle.None;
@@ -71,7 +124,9 @@ namespace Solver.Views
 
                 _currentCheckBoxes.Add(cb);
                 answersPanel.Controls.Add(cb);
+
             }
+            answersPanel.Visible = true;
         }
 
         public List<int> GetSelectedAnswerIndices()
