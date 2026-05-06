@@ -39,75 +39,111 @@
             label1 = new Label();
             label2 = new Label();
             panel1 = new Panel();
+            panel2 = new Panel();
             label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)QuizTimeLimitNumericUpDown).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // QuizNameTextBox
             // 
-            QuizNameTextBox.Location = new Point(18, 70);
+            QuizNameTextBox.BackColor = Color.DimGray;
+            QuizNameTextBox.BorderStyle = BorderStyle.None;
+            QuizNameTextBox.Dock = DockStyle.Fill;
+            QuizNameTextBox.ForeColor = Color.White;
+            QuizNameTextBox.Location = new Point(0, 0);
             QuizNameTextBox.Name = "QuizNameTextBox";
-            QuizNameTextBox.Size = new Size(240, 27);
+            QuizNameTextBox.Size = new Size(309, 20);
             QuizNameTextBox.TabIndex = 0;
             // 
             // QuizTimeLimitNumericUpDown
             // 
-            QuizTimeLimitNumericUpDown.Location = new Point(891, 70);
+            QuizTimeLimitNumericUpDown.BackColor = Color.DimGray;
+            QuizTimeLimitNumericUpDown.BorderStyle = BorderStyle.FixedSingle;
+            QuizTimeLimitNumericUpDown.ForeColor = Color.White;
+            QuizTimeLimitNumericUpDown.Location = new Point(871, 70);
             QuizTimeLimitNumericUpDown.Name = "QuizTimeLimitNumericUpDown";
-            QuizTimeLimitNumericUpDown.Size = new Size(78, 27);
+            QuizTimeLimitNumericUpDown.Size = new Size(98, 27);
             QuizTimeLimitNumericUpDown.TabIndex = 1;
             // 
             // QuestionsListBox
             // 
+            QuestionsListBox.BackColor = Color.DimGray;
+            QuestionsListBox.ForeColor = Color.White;
             QuestionsListBox.FormattingEnabled = true;
             QuestionsListBox.Location = new Point(30, 226);
             QuestionsListBox.Name = "QuestionsListBox";
             QuestionsListBox.ScrollAlwaysVisible = true;
-            QuestionsListBox.Size = new Size(951, 204);
+            QuestionsListBox.Size = new Size(951, 184);
             QuestionsListBox.TabIndex = 2;
             // 
             // AddQuestionBtn
             // 
-            AddQuestionBtn.Location = new Point(354, 460);
+            AddQuestionBtn.Cursor = Cursors.Hand;
+            AddQuestionBtn.FlatAppearance.BorderSize = 0;
+            AddQuestionBtn.FlatStyle = FlatStyle.Flat;
+            AddQuestionBtn.ForeColor = Color.White;
+            AddQuestionBtn.Location = new Point(18, 357);
             AddQuestionBtn.Name = "AddQuestionBtn";
-            AddQuestionBtn.Size = new Size(300, 50);
+            AddQuestionBtn.Padding = new Padding(0, 0, 0, 5);
+            AddQuestionBtn.Size = new Size(300, 55);
             AddQuestionBtn.TabIndex = 3;
             AddQuestionBtn.Text = "Add question";
             AddQuestionBtn.UseVisualStyleBackColor = true;
             // 
             // RemoveQuestionBtn
             // 
+            RemoveQuestionBtn.Cursor = Cursors.Hand;
+            RemoveQuestionBtn.FlatAppearance.BorderSize = 0;
+            RemoveQuestionBtn.FlatStyle = FlatStyle.Flat;
+            RemoveQuestionBtn.ForeColor = Color.White;
             RemoveQuestionBtn.Location = new Point(681, 460);
             RemoveQuestionBtn.Name = "RemoveQuestionBtn";
-            RemoveQuestionBtn.Size = new Size(300, 50);
+            RemoveQuestionBtn.Padding = new Padding(0, 0, 0, 5);
+            RemoveQuestionBtn.Size = new Size(300, 55);
             RemoveQuestionBtn.TabIndex = 4;
             RemoveQuestionBtn.Text = "Delete question";
             RemoveQuestionBtn.UseVisualStyleBackColor = true;
             // 
             // SaveQuizBtn
             // 
-            SaveQuizBtn.Location = new Point(30, 29);
+            SaveQuizBtn.Cursor = Cursors.Hand;
+            SaveQuizBtn.FlatAppearance.BorderSize = 0;
+            SaveQuizBtn.FlatStyle = FlatStyle.Flat;
+            SaveQuizBtn.ForeColor = Color.White;
+            SaveQuizBtn.Location = new Point(30, 26);
             SaveQuizBtn.Name = "SaveQuizBtn";
-            SaveQuizBtn.Size = new Size(335, 55);
+            SaveQuizBtn.Padding = new Padding(0, 0, 0, 5);
+            SaveQuizBtn.Size = new Size(335, 60);
             SaveQuizBtn.TabIndex = 5;
             SaveQuizBtn.Text = "Save quiz";
             SaveQuizBtn.UseVisualStyleBackColor = true;
             // 
             // ChangeQuestionBtn
             // 
-            ChangeQuestionBtn.Location = new Point(30, 460);
+            ChangeQuestionBtn.Cursor = Cursors.Hand;
+            ChangeQuestionBtn.FlatAppearance.BorderSize = 0;
+            ChangeQuestionBtn.FlatStyle = FlatStyle.Flat;
+            ChangeQuestionBtn.ForeColor = Color.White;
+            ChangeQuestionBtn.Location = new Point(344, 357);
             ChangeQuestionBtn.Name = "ChangeQuestionBtn";
-            ChangeQuestionBtn.Size = new Size(300, 50);
+            ChangeQuestionBtn.Padding = new Padding(0, 0, 0, 5);
+            ChangeQuestionBtn.Size = new Size(300, 55);
             ChangeQuestionBtn.TabIndex = 6;
-            ChangeQuestionBtn.Text = "Change question";
+            ChangeQuestionBtn.Text = "Modify question";
             ChangeQuestionBtn.UseVisualStyleBackColor = true;
             // 
             // LoadQuizBtn
             // 
-            LoadQuizBtn.Location = new Point(646, 29);
+            LoadQuizBtn.Cursor = Cursors.Hand;
+            LoadQuizBtn.FlatAppearance.BorderSize = 0;
+            LoadQuizBtn.FlatStyle = FlatStyle.Flat;
+            LoadQuizBtn.ForeColor = Color.White;
+            LoadQuizBtn.Location = new Point(646, 26);
             LoadQuizBtn.Name = "LoadQuizBtn";
-            LoadQuizBtn.Size = new Size(335, 55);
+            LoadQuizBtn.Padding = new Padding(0, 0, 0, 5);
+            LoadQuizBtn.Size = new Size(335, 60);
             LoadQuizBtn.TabIndex = 7;
             LoadQuizBtn.Text = "Load quiz";
             LoadQuizBtn.UseVisualStyleBackColor = true;
@@ -115,7 +151,8 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(18, 46);
+            label1.ForeColor = Color.FromArgb(255, 255, 85);
+            label1.Location = new Point(18, 36);
             label1.Name = "label1";
             label1.Size = new Size(69, 20);
             label1.TabIndex = 8;
@@ -124,32 +161,47 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(704, 46);
+            label2.ForeColor = Color.FromArgb(255, 255, 85);
+            label2.Location = new Point(511, 36);
             label2.Name = "label2";
-            label2.Size = new Size(265, 20);
+            label2.Size = new Size(200, 20);
             label2.TabIndex = 9;
-            label2.Text = "Quiz time duration (provide in second)";
+            label2.Text = "Quiz time duration (seconds)";
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(QuizNameTextBox);
+            panel1.Controls.Add(ChangeQuestionBtn);
+            panel1.Controls.Add(AddQuestionBtn);
             panel1.Controls.Add(QuizTimeLimitNumericUpDown);
+            panel1.Controls.Add(panel2);
             panel1.Location = new Point(12, 103);
             panel1.Name = "panel1";
             panel1.Size = new Size(983, 438);
             panel1.TabIndex = 10;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DimGray;
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(QuizNameTextBox);
+            panel2.Location = new Point(18, 70);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(313, 38);
+            panel2.TabIndex = 10;
+            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(455, 46);
+            label3.BackColor = Color.Transparent;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(387, 22);
             label3.Name = "label3";
-            label3.Size = new Size(92, 20);
+            label3.Size = new Size(58, 20);
             label3.TabIndex = 11;
-            label3.Text = "Quiz Creator";
+            label3.Text = "Creator";
             // 
             // CreatorForm
             // 
@@ -158,10 +210,8 @@
             ClientSize = new Size(1007, 553);
             Controls.Add(label3);
             Controls.Add(LoadQuizBtn);
-            Controls.Add(ChangeQuestionBtn);
             Controls.Add(SaveQuizBtn);
             Controls.Add(RemoveQuestionBtn);
-            Controls.Add(AddQuestionBtn);
             Controls.Add(QuestionsListBox);
             Controls.Add(panel1);
             Name = "CreatorForm";
@@ -169,6 +219,8 @@
             ((System.ComponentModel.ISupportInitialize)QuizTimeLimitNumericUpDown).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,5 +239,6 @@
         private Label label2;
         private Panel panel1;
         private Label label3;
+        private Panel panel2;
     }
 }

@@ -17,11 +17,21 @@ namespace QuizApp
             this.BackgroundImage = UI.Properties.Resources.mc_bg;
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
+            SaveQuizBtn.BackgroundImage = UI.Properties.Resources.mc_tile;
+            SaveQuizBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            LoadQuizBtn.BackgroundImage = UI.Properties.Resources.mc_tile;
+            LoadQuizBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            ChangeQuestionBtn.BackgroundImage = UI.Properties.Resources.mc_tile;
+            ChangeQuestionBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            AddQuestionBtn.BackgroundImage = UI.Properties.Resources.mc_tile;
+            AddQuestionBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            RemoveQuestionBtn.BackgroundImage = UI.Properties.Resources.mc_tile;
+            RemoveQuestionBtn.BackgroundImageLayout = ImageLayout.Stretch;
+
             UI.FontManager.LoadFontFromResource("Monocraft.ttf");
 
-            //LauncherLabel.Font = UI.FontManager.GetFont(28f, 0);
-            SaveQuizBtn.Font = UI.FontManager.GetFont(20f, 0);
-            LoadQuizBtn.Font = UI.FontManager.GetFont(20f, 0);
+            label3.Font = UI.FontManager.GetFont(28f, 0);
+            this.Font = UI.FontManager.GetFont(14f, 0);
         }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string QuizTitle
@@ -48,6 +58,7 @@ namespace QuizApp
         {
             MessageBox.Show(message, "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         public event Action? AddQuestionBtnClicked;
         public event Action? ChangeQuestionBtnClicked;
         public event Action? RemoveQuestionBtnClicked;
