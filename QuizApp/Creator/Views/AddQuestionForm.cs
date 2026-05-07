@@ -13,6 +13,16 @@ namespace Creator.Views
 
             this.BackgroundImage = Image.FromFile(@"Images\mc_bg.png");
             this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            AddBtn.BackgroundImage = UI.Properties.Resources.mc_tile;
+            AddBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            CancelBtn.BackgroundImage = UI.Properties.Resources.mc_tile;
+            CancelBtn.BackgroundImageLayout = ImageLayout.Stretch;
+
+            UI.FontManager.LoadFontFromResource("Monocraft.ttf");
+
+            AddQuestionLabel.Font = UI.FontManager.GetFont(28f, 0);
+            this.Font = UI.FontManager.GetFont(14f, 0);
         }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string QuestionText
@@ -56,12 +66,13 @@ namespace Creator.Views
         }
         public void ShowError(string message)
         {
-            MessageBox.Show(message, "Uwaga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(message, "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         public void CloseView()
         {
             this.Close();
         }
+
         public event Action? AddBtnClicked;
     }
 }

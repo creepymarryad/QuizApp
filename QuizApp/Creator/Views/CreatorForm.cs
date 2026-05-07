@@ -56,7 +56,7 @@ namespace QuizApp
         }
         public void ShowMessage(string message)
         {
-            MessageBox.Show(message, "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public event Action? AddQuestionBtnClicked;
